@@ -3,6 +3,7 @@ Steps to execute the code:
 2.  Clone the Repository:https://github.com/saumya1411/Compounded-word
 3.  Compile the Code: https://github.com/saumya1411/Compounded-word/blob/main/CompoundWord/compoundWord.cpp
 4.  Run the Program
+5.  Enter the Filename: Provide the name of the text file that contains the list of words after running the code. The program will read the words from this file
 
 Overview of program:
 
