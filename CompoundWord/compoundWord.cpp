@@ -20,7 +20,7 @@ bool isCompound(const std::unordered_set<std::string>& wordDictionary, const std
     if (isOriginal && wordDictionary.count(word)) {
         return true;
     }
-
+   //Checking if word can be split into two smaller compound words
     for (int i = 1; i < word.length(); ++i) {
         std::string prefix = word.substr(0, i);
         std::string suffix = word.substr(i);
@@ -49,7 +49,8 @@ TwoStrings longestAndSecondLongestCompoundedWords(const std::string& filename) {
     }
 
     inputFile.close();
-
+    
+   // Sorting words by length in descending order
     std::sort(words.begin(), words.end(), [](const std::string& a, const std::string& b) {
         return a.length() > b.length();
     });
@@ -78,11 +79,11 @@ int main() {
 
     std::cout << "\nOutput for Input file ( " << filename << " ):\n\n";
 
-    auto startTime = std::chrono::high_resolution_clock::now();
+    auto startTime = std::chrono::high_resolution_clock::now();   // Finding the start time for measuring execution time.
     TwoStrings result = longestAndSecondLongestCompoundedWords(filename);
-    auto endTime = std::chrono::high_resolution_clock::now();
+    auto endTime = std::chrono::high_resolution_clock::now();     // Finding the end time for measuring execution time.
 
-    double processingTime = std::chrono::duration<double>(endTime - startTime).count();
+    double processingTime = std::chrono::duration<double>(endTime - startTime).count();     // Calculating the processing time in seconds
 
     std::cout << "Longest compound word: " << result.first << std::endl;
     std::cout << "Second longest compound word: " << result.second << std::endl;
